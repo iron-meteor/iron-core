@@ -80,4 +80,5 @@ Tinytest.add('Utils - classCase', function (test) {
   test.equal(Iron.utils.classCase('postsShow'), 'PostsShow');
   test.equal(Iron.utils.classCase('posts-show'), 'PostsShow');
   test.equal(Iron.utils.classCase('posts_show'), 'PostsShow');
+  test.equal(Iron.utils.classCase('/posts/show'), 'PostsShow');
 });
