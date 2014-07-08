@@ -48,3 +48,36 @@ Tinytest.add('Utils - extend', function (test) {
   var c = new Child;
   test.equal(calls.length, 1);
 });
+
+Tinytest.add('Utils - global', function (test) {
+  var g = Iron.utils.global;
+
+  if (Meteor.isClient)
+    test.equal(g, window);
+  if (Meteor.isServer)
+    test.equal(g, global);
+});
+
+Tinytest.add('Utils - resolve', function (test) {
+  var global = (function () { return this; })();
+
+  global.outer = {
+    inner: 'value'
+  };
+
+  var res = Iron.utils.resolve('outer.inner');
+  test.equal(res, 'value', 'unable to resolve on global object');
+});
+
+Tinytest.add('Utils - capitalize', function (test) {
+  test.equal(Iron.utils.capitalize('lower'), 'Lower');
+  test.equal(Iron.utils.capitalize('Lower'), 'Lower');
+  test.equal(Iron.utils.capitalize('lowerSomething'), 'LowerSomething');
+  test.equal(Iron.utils.capitalize('lower-something'), 'Lower-something');
+});
+
+Tinytest.add('Utils - classCase', function (test) {
+  test.equal(Iron.utils.classCase('postsShow'), 'PostsShow');
+  test.equal(Iron.utils.classCase('posts-show'), 'PostsShow');
+  test.equal(Iron.utils.classCase('posts_show'), 'PostsShow');
+});
