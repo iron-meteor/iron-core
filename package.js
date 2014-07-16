@@ -12,16 +12,16 @@ Package.on_use(function (api) {
   // for cloning
   api.use('ejson');
 
-  api.add_files('lib/iron_core.js');
+  api.addFiles('lib/iron_core.js');
 
   // symbol exports
   api.export('Iron');
 });
 
 Package.on_test(function (api) {
-  api.use('iron-core');
+  api.use('iron:core');
   api.use('tinytest');
   api.use('test-helpers');
 
-  api.add_files('test/iron_core_test.js');
+  api.addFiles('test/iron_core_test.js');
 });
