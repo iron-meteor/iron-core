@@ -82,3 +82,15 @@ Tinytest.add('Utils - classCase', function (test) {
   test.equal(Iron.utils.classCase('posts_show'), 'PostsShow');
   test.equal(Iron.utils.classCase('/posts/show'), 'PostsShow');
 });
+
+Tinytest.add('Utils - default', function (test) {
+  var target = {};
+  Iron.utils.defaultValue(target, 'prop', true);
+  test.isTrue(target.prop);
+
+  Iron.utils.defaultValue(target, 'prop', false);
+  test.isTrue(target.prop);
+
+  var existingValue = Iron.utils.defaultValue(target, 'prop', false);
+  test.isTrue(existingValue);
+});
