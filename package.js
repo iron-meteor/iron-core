@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Iron namespace and utilities.',
-  version: '0.2.0',
+  version: '0.3.0',
   git: 'https://github.com/eventedmind/iron-core'
 });
 
@@ -11,6 +11,9 @@ Package.on_use(function (api) {
   // for cloning
   api.use('ejson');
 
+  // remove migrated version
+  api.use('cmather:iron-core', {weak: true});
+
   api.add_files('lib/iron_core.js');
 
   // symbol exports
@@ -18,7 +21,7 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function (api) {
-  api.use('iron-core');
+  api.use('iron:core');
   api.use('tinytest');
   api.use('test-helpers');
   api.add_files('test/iron_core_test.js');

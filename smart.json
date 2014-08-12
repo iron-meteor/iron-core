@@ -3,6 +3,6 @@
   "description": "Iron namespace and utilities.",
   "homepage": "https://github.com/eventedmind/iron-core",
   "author": "Chris Mather (https://github.com/cmather)",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "git": "https://github.com/EventedMind/iron-core.git"
 }

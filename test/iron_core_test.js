@@ -94,3 +94,25 @@ Tinytest.add('Utils - default', function (test) {
   var existingValue = Iron.utils.defaultValue(target, 'prop', false);
   test.isTrue(existingValue);
 });
+
+Tinytest.add('Utils - namespace', function (test) {
+  var global = Iron.utils.global;
+
+  global.MyLib = {
+    ns: {}
+  };
+
+  var o = {};
+  var result;
+
+  result = Iron.utils.namespace('MyLib.ns.O', o);
+  test.equal(global.MyLib.ns.O, o);
+  test.equal(result, o);
+
+  result = Iron.utils.namespace('MyLib.ns.O');
+  test.equal(result, o);
+
+  result = Iron.utils.namespace('O', o);
+  test.equal(global.O, o);
+  test.equal(result, o);
+});
