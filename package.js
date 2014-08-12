@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Iron namespace and utilities.',
-  version: '0.3.0',
+  version: '0.3.1',
   git: 'https://github.com/eventedmind/iron-core'
 });
 
@@ -14,6 +14,7 @@ Package.on_use(function (api) {
   // remove migrated version
   api.use('cmather:iron-core@0.2.0', {weak: true});
 
+  api.add_files('lib/version_conflict_error.js');
   api.add_files('lib/iron_core.js');
 
   // symbol exports
