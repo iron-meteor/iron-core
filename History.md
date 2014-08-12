@@ -1,3 +1,9 @@
+v0.3.1 / 2014-08-12
+==================
+  * Throw error if cmather:iron-core is installed.
+  * Prepare for new Meteor packaging system
+  * Fix Iron.utils.global to work in strict mode
+
 v0.2.0 / 2014-07-25
 ==================
 
