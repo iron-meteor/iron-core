@@ -6,13 +6,13 @@ Package.describe({
 
 Package.on_use(function (api) {
   // dependencies
-  api.use('underscore');
+  api.use('underscore@1.0.0');
 
   // for cloning
-  api.use('ejson');
+  api.use('ejson@1.0.0');
 
   // remove migrated version
-  api.use('cmather:iron-core', {weak: true});
+  api.use('cmather:iron-core@0.2.0', {weak: true});
 
   api.add_files('lib/iron_core.js');
 
