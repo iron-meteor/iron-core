@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Iron namespace and utilities.',
-  version: '0.3.1',
+  version: '0.3.2',
   git: 'https://github.com/eventedmind/iron-core'
 });
 
