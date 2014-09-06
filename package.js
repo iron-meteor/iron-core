@@ -1,11 +1,11 @@
 Package.describe({
   summary: 'Iron namespace and utilities.',
-  version: '0.3.3-rc0',
+  version: '1.0.0-pre0',
   git: 'https://github.com/eventedmind/iron-core'
 });
 
 Package.on_use(function (api) {
-  api.versionsFrom('METEOR@0.9.1-rc3');
+  api.versionsFrom('METEOR@0.9.2-rc0');
 
   // dependencies
   api.use('underscore');
@@ -24,8 +24,6 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function (api) {
-  api.versionsFrom('METEOR@0.9.1-rc3');
-
   api.use('iron:core');
   api.use('tinytest');
   api.use('test-helpers');
