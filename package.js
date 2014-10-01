@@ -1,15 +1,17 @@
 Package.describe({
   summary: 'Iron namespace and utilities.',
-  version: '0.3.2',
+  version: '1.0.0-pre3',
   git: 'https://github.com/eventedmind/iron-core'
 });
 
 Package.on_use(function (api) {
+  api.versionsFrom('METEOR@0.9.2');
+
   // dependencies
-  api.use('underscore@1.0.0');
+  api.use('underscore');
 
   // for cloning
-  api.use('ejson@1.0.0');
+  api.use('ejson');
 
   // remove migrated version
   api.use('cmather:iron-core@0.2.0', {weak: true});
