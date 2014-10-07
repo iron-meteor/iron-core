@@ -3,6 +3,7 @@ Tinytest.add('Utils - inherits', function (test) {
 
   Parent = function () {};
   Parent.parentStaticProp = true;
+  Parent.parentObjectProp = {parent: true};
   Parent.prototype.parentProp = true;
 
   Child = function () {};
@@ -11,6 +12,11 @@ Tinytest.add('Utils - inherits', function (test) {
     childProp: true
   });
 
+  Child.parentObjectProp.child = true;
+
+  // test that static properties are cloned
+  test.isFalse(Parent.parentObjectProp.child, "child static object is writing to the parent!");
+
   test.equal(Child.__super__, Parent.prototype);
   test.isTrue(Child.prototype.childProp);
   test.isTrue(Child.parentStaticProp);
@@ -18,6 +24,7 @@ Tinytest.add('Utils - inherits', function (test) {
   var c = new Child;
   test.isTrue(c.childProp);
   test.isTrue(c.parentProp);
+
 });
 
 Tinytest.add('Utils - extend', function (test) {
