@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Iron namespace and utilities.',
-  version: '1.0.0',
+  version: '1.0.2',
 });
 
 Package.on_use(function (api) {
