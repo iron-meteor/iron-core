@@ -1,6 +1,7 @@
 Package.describe({
   summary: 'Iron namespace and utilities.',
   version: '1.0.8',
+  name: 'iron:core'
 });
 
 Package.on_use(function (api) {
