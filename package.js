@@ -1,7 +1,8 @@
 Package.describe({
+  name: 'iron:core',
   summary: 'Iron namespace and utilities.',
-  version: '1.0.8',
-  name: 'iron:core'
+  version: '1.0.11',
+  git: 'https://github.com/iron-meteor/iron-core'
 });
 
 Package.on_use(function (api) {
@@ -9,9 +10,7 @@ Package.on_use(function (api) {
 
   // dependencies
   api.use('underscore');
-
-  // for cloning
-  api.use('ejson');
+  api.use('ejson'); // for cloning
 
   // remove migrated version
   api.use('cmather:iron-core@0.2.0', {weak: true});
